@@ -1,0 +1,21 @@
+{
+    "name": "hexlet/code",
+    "description": "проект Игры разума",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elena Kilyanova",
+            "email": "helen02027@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "bin": [
+        "bin/brain-games"
+    ]
+
+}
