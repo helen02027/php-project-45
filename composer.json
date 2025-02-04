@@ -1,6 +1,7 @@
 {
     "name": "hexlet/code",
     "description": "проект Игры разума",
+    "license": "MIT",
     "autoload": {
         "files": [
             "src/Cli.php"
