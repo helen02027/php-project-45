@@ -1,16 +1,21 @@
-install: # локальная установка composer
+install:
 	composer install
 
-brain-games: # запустить файл bin/brain-games.php
-	./bin/brain-games
-
-validate: # избегаем добавления пакетов в основной каталог packagist
-	composer validate
-	.DEFAULT_GOAL := build-run
+console:
+	composer exec --verbose psysh
 
 lint:
-	composer exec --verbose phpcs -- --standard=PSR12 src bin
+	composer exec --verbose phpcs -- src bin
+	composer exec --verbose phpstan
 
-build-run: build run
-
-.PHONY: build
+#lint-fix:
+#	composer exec --verbose phpcbf -- src tests
+#
+#test:
+#	composer exec --verbose phpunit tests
+#
+#test-coverage:
+#	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-clover build/logs/clover.xml
+#
+#test-coverage-text:
+#	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-text
